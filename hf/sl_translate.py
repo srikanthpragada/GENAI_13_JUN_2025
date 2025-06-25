@@ -1,5 +1,4 @@
 # pip install -q streamlit
-# 
 import streamlit as st
 from huggingface_hub import InferenceClient
 import keys
@@ -10,10 +9,7 @@ client = InferenceClient(model=model_id, token= keys.HUGGINGFACE_KEY)
 st.title("English to Hindi")
 text  = st.text_input("Enligsh Text", "" )
 if len(text) > 0:
-    prompt = f"""
-    {text} 
-    """
-    hindi = client.translation(prompt)
+    hindi = client.translation(text)
     st.write(hindi.translation_text)
 
 

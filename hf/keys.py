@@ -1,6 +1,5 @@
 import os
-hugging_face_key = os.getenv('HF_KEY')
-HUGGINGFACE_KEY = hugging_face_key 
+HUGGINGFACE_KEY = os.getenv('HF_KEY')
 
 if __name__ == '__main__':
      print(HUGGINGFACE_KEY)
