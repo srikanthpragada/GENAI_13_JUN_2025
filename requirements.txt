@@ -14,8 +14,8 @@ langchain-ollama
 langchain-google-genai
 langchain-openai
 streamlit
-
-
+pypdf
+sentence-transformers
 
 
 
