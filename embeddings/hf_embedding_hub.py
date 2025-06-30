@@ -1,9 +1,9 @@
-from langchain_huggingface import HuggingFaceInferenceAPIEmbeddings
+from langchain_huggingface import HuggingFaceEndpointEmbeddings
 import keys 
  
-embeddings_model = HuggingFaceInferenceAPIEmbeddings(
-    api_key=keys.HUGGINGFACEKEY,
-    model_name="sentence-transformers/all-MiniLM-L6-v2"  
+embeddings_model = HuggingFaceEndpointEmbeddings(
+    model="sentence-transformers/all-MiniLM-L6-v2",
+    huggingfacehub_api_token= keys.HUGGINGFACEKEY
 )
 
 embeddings = embeddings_model.embed_documents(
