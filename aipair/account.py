@@ -12,14 +12,14 @@ class Account:
             self.balance += amount
             print(f"Deposited {amount}. New balance is {self.balance}.")
         else:
-            print("Deposit amount must be positive.")
+            raise ValueError("Deposit amount must be positive.")
 
     def withdraw(self, amount):
         if 0 < amount <= self.balance:
             self.balance -= amount
             print(f"Withdrew {amount}. New balance is {self.balance}.")
         else:
-            print("Insufficient funds or invalid withdrawal amount.")
+            raise ValueError("Insufficient funds or invalid withdrawal amount.")
 
     def display_balance(self):
         print(f"Account Number: {self.acno}, Customer Name: {self.customername}, Balance: {self.balance}")

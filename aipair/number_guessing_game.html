@@ -1,0 +1,37 @@
+// Number guessing game
+// Use HTML form to take input from user and display output
+// Write JavaScript and include that in this HTML file
+
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function guessNumber() {
+            const userGuess = parseInt(document.getElementById('guess').value);
+            const randomNumber = Math.floor(Math.random() * 100) + 1;
+            let resultMessage;
+
+            if (userGuess < 1 || userGuess > 100 || isNaN(userGuess)) {
+                resultMessage = "Please enter a valid number between 1 and 100.";
+            } else if (userGuess === randomNumber) {
+                resultMessage = "Congratulations! You guessed the correct number: " + randomNumber;
+            } else if (userGuess < randomNumber) {
+                resultMessage = "Too low! The correct number was: " + randomNumber;
+            } else {
+                resultMessage = "Too high! The correct number was: " + randomNumber;
+            }
+
+            document.getElementById('result').innerText = resultMessage;
+        }
+        </script>
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #result { margin-top: 20px; }
+    </style>    
+
+</head>
+<body>
