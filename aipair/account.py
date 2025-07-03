@@ -8,6 +8,18 @@ class Account:
         self.balance = balance
 
     def deposit(self, amount):
+        """
+        Deposits a specified positive amount into the account.
+
+        Args:
+            amount (float): The amount of money to deposit. Must be greater than zero.
+
+        Raises:
+            ValueError: If the deposit amount is not positive.
+
+        Side Effects:
+            Increases the account balance by the specified amount and prints a confirmation message.
+        """
         if amount > 0:
             self.balance += amount
             print(f"Deposited {amount}. New balance is {self.balance}.")
